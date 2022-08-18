@@ -58,7 +58,7 @@ WHERE Product LIKE '%headphones%'
 GROUP BY Product
 
 #11. What was the average amount spent per account in February?
-SELECT SUM(quantity*price)/COUNT(cust.acctnum) AS average_per_acct
+SELECT SUM(quantity*price)/COUNT(cust.acctnum)
 FROM BIT_DB.FebSales feb
 LEFT JOIN BIT_DB.customers cust
 ON feb.orderID=cust.order_id
