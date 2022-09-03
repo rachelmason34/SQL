@@ -22,7 +22,7 @@ ORDER BY price ASC
 LIMIT 1
 
 #5. What is the total revenue for each product sold in January?
-SELECT Product, SUM(quantity)*price AS revenue
+SELECT Product, SUM(Quantity)*price AS revenue
 FROM BIT_DB.JanSales
 GROUP BY Product
 
