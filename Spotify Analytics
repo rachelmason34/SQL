@@ -63,9 +63,10 @@ ORDER BY duration_ms DESC
 LIMIT 1
 
 #4. What artists had more than one song in the Top 50 Spotify songs of 2021?
-SELECT artist_name
+SELECT DISTINCT artist_name, COUNT(track_id)
 FROM BIT_DB.Spotifydata
-GROUP BY artist_name HAVING COUNT(*)>=2
+GROUP BY artist_name
+HAVING COUNT(track_id)>=2
 
 #5. What's the average danceability for the 10 most popular songs?
 SELECT 
