@@ -68,6 +68,12 @@ FROM BIT_DB.Spotifydata
 GROUP BY artist_name HAVING COUNT(*)>=2
 
 #5. What's the average danceability for the 10 most popular songs?
-SELECT AVG(danceability)
+SELECT 
+track_name
+,artist_name
+,popularity
+,AVG(danceability) AS danceability
 FROM BIT_DB.Spotifydata
-WHERE popularity>=92
+GROUP BY artist_name
+ORDER BY popularity DESC
+LIMIT 10
