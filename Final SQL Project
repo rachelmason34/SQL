@@ -43,8 +43,14 @@ JOIN chinook.invoices i
 ON c.CustomerId=i.CustomerId
 
 #8. How many Invoices were there in 2009?
+SELECT COUNT(*)
+FROM chinook.invoices
+WHERE InvoiceDate BETWEEN '2009-01-01' AND '2009-12-31'
 
 #9. What are the total sales for 2009?
+SELECT SUM(Total)
+FROM chinook.invoices
+WHERE InvoiceDate BETWEEN '2009-01-01' AND '2009-12-31'
 
 #10. Write a query that includes the purchased track name with each invoice line item.
 
