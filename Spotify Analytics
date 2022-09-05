@@ -84,6 +84,7 @@ WITH tempTable AS (
     SELECT artist_name, AVG(popularity) AS popularity
     FROM Spotifydata
     GROUP BY artist_name
+    ORDER BY popularity DESC
 )
  
 SELECT artist_name, popularity, 'Top Star' AS tag
