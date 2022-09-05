@@ -1,16 +1,33 @@
 #In this SQL code, I'm querying a database that's holding a digital media store's data to answer questions about the data. 
 
-#1. Show Customers (their full names, customer ID, and country) who are not in the US.
+#1. Show Customers who are not in the US. Include their full name, customer ID, and country.
+SELECT FirstName, LastName, CustomerID, Country
+FROM chinook.customers
+WHERE Country != 'USA'
 
-#2. Show only the Customers from Brazil.
+#2. Show only the Customers from Brazil. Include their full name, customer ID, and country.
+SELECT FirstName, LastName, CustomerID, Country
+FROM chinook.customers
+WHERE Country = 'Brazil'
 
-#3. Find the Invoices of customers who are from Brazil.
+#3. Find the Invoices of customers who are from Brazil. Include their full name, invoice ID, invoice date, and country.
+SELECT c.FirstName, c.LastName, i.InvoiceId, i.InvoiceDate, c.Country
+FROM chinook.customers c
+LEFT JOIN chinook.invoices i
+ON c.CustomerId=i.CustomerId
+WHERE Country = 'Brazil'
 
-#4. Show the Employees who are Sales Agents.
+#4. Show the Employees who are Sales Support Agents. Include their employee ID number, full name, and job title.
+SELECT EmployeeId, LastName, FirstName, Title
+FROM chinook.employees
+WHERE Title = 'Sales Support Agent'
 
 #5. Find a unique/distinct list of billing countries from the Invoice table.
+SELECT DISTINCT BillingCountry
+FROM chinook.invoices
 
 #6. Provide a query that shows the invoices associated with each sales agent. The resulting table should include the Sales Agent's full name.
+
 
 #7. Show the Invoice Total, Customer name, Country, and Sales Agent name for all invoices and customers.
 
