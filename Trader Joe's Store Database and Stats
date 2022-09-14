@@ -20,15 +20,15 @@ INSERT INTO store VALUES (15, "Thai Lime & Chili Cashews", "Snacks", 7.99, 8);
 
 --display the database ordered by popularity. 
 SELECT * FROM store
-ORDER BY popularity asc; 
+ORDER BY popularity ASC; 
 
 --what is the avg price of items in the frozen section? 
 SELECT AVG(price) "avg frozen item price"
 FROM store
-where section='Frozen'; 
+WHERE section='Frozen'; 
 
 --what are the most 5 popular items? 
 SELECT item, price, popularity
 FROM store
-order by popularity asc
-limit 5; 
+ORDER BY popularity ASC
+LIMIT 5; 
